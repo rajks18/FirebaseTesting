@@ -31,6 +31,8 @@ const Login = () => {
         setError("Invalid user email or password! Please type correct one.");
       });
   };
+
+  const handleGoogleLogin
   return (
     <div className="flex justify-center min-h-screen items-center bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-md rounded-lg">
@@ -74,7 +76,7 @@ const Login = () => {
         <div className="text-center space-y-4">
           <p className="text-gray-600">Or login with</p>
           <div className="flex justify-center space-x-4">
-            <button className="flex items-center px-4 py-2 space-x-2 bg-red-500 text-white rounded hover:bg-red-600">
+            <button onClick={handleGoogleLogin} className="flex items-center px-4 py-2 space-x-2 bg-red-500 text-white rounded hover:bg-red-600">
               <FaGoogle />
               <span>Google</span>
             </button>
