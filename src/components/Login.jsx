@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import app from "../firebase/firebase.config";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
+import { GoogleAuthProvider } from "firebase/auth/web-extension";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -32,7 +33,17 @@ const Login = () => {
       });
   };
 
-  const handleGoogleLogin
+  const handleGoogleLogin = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+       
+      })
+      .catch((error) => {
+        
+      });
+  };
+
   return (
     <div className="flex justify-center min-h-screen items-center bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-md rounded-lg">
