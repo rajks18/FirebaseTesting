@@ -1,12 +1,14 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import app from "../firebase/firebase.config";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();
 
   const auth = getAuth(app);
 
@@ -25,7 +27,7 @@ const Login = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        setError("Invalid user email or password! Please type correct one");
+        setError("Invalid user email or password! Please type correct one.");
       });
   };
   return (
@@ -57,6 +59,11 @@ const Login = () => {
               className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
             />
           </div>
+
+          {
+            error && <p className="text-sm italic text-red-500">{error}</p>
+          }
+
           <button type="submit" className="w-full bg-blue-600 text-white rounded-md hover:bg-blue-700 py-2">
             Login
           </button>
