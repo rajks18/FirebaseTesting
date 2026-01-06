@@ -2,6 +2,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import app from "../firebase/firebase.config";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -34,6 +35,8 @@ const Login = () => {
     <div className="flex justify-center min-h-screen items-center bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-md rounded-lg">
         <h2 className="text-2xl font-bold text-center text-gray-800">Please Login</h2>
+
+        {/* login form */}
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
             <label className="block mb-2 text-sm font-medium text-gray-700">Email:</label>
@@ -60,14 +63,29 @@ const Login = () => {
             />
           </div>
 
-          {
-            error && <p className="text-sm italic text-red-500">{error}</p>
-          }
+          {error && <p className="text-sm italic text-red-500">{error}</p>}
 
           <button type="submit" className="w-full bg-blue-600 text-white rounded-md hover:bg-blue-700 py-2">
             Login
           </button>
         </form>
+
+        {/* social login */}
+        <div className="">
+          <p className="text-gray-600">Or login with</p>
+          <div>
+            <button>
+              <FcGoogle />
+              <span>Google</span>
+            </button>
+
+            <button>Facebook</button>
+
+            <button>Github</button>
+          </div>
+        </div>
+
+        {/* texts */}
         <p className="text-sm text-center text-gray-600">
           Don't have an account? Please{" "}
           <Link to="/register" className="text-blue-600 hover:underline">
