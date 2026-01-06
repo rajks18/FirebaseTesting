@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { Link } from 'react-router'
+import Logout from './components/Logout'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
           <li><Link to="/login" className='px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-700'>Login</Link></li>
         </ul>
       </nav>
+      <Logout/>
     </div>
   )
 }
