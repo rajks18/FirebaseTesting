@@ -37,10 +37,11 @@ const Login = () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
       .then((result) => {
-       
+       console.log("Google sign-in Successful:", result.user);
+        navigate("/");
       })
       .catch((error) => {
-        
+        console.log("Google sign-in Failed:", error);
       });
   };
 
