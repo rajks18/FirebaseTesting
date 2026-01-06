@@ -6,7 +6,9 @@ import app from "../firebase/firebase.config";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const auth = getAuth(app);
+
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -14,6 +16,9 @@ const Login = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
+        alert("Login Succesfull");
+        navigate("/");
+        console.log(user);
         // ...
       })
       .catch((error) => {
