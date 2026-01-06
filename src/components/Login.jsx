@@ -1,9 +1,9 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import app from "../firebase/firebase.config";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
-import { GoogleAuthProvider } from "firebase/auth/web-extension";
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
