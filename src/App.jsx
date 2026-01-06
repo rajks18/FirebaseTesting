@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { Link } from 'react-router'
 import Logout from './components/Logout'
+import AuthState from './components/AuthState'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         </ul>
       </nav>
       <Logout/>
+      <AuthState/>
     </div>
   )
 }
