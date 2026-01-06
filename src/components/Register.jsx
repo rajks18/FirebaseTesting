@@ -73,14 +73,17 @@ const Register = () => {
         <div className="text-center space-y-4">
           <p className="text-gray-600">Or signup with</p>
           <div className="flex justify-center space-x-4">
+
             <button className="flex items-center px-4 py-2 space-x-2 bg-red-500 text-white rounded hover:bg-red-600">
               <FaGoogle />
               <span>Google</span>
             </button>
+
             <button className="flex items-center px-4 py-2 space-x-2 bg-blue-500 text-white rounded hover:bg-blue-600">
               <FaFacebook />
               <span>Facebook</span>
             </button>
+
             <button className="flex items-center px-4 py-2 space-x-2 bg-gray-800 text-white rounded hover:bg-gray-900">
               <FaGithub />
               <span>Github</span>
