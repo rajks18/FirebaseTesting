@@ -6,6 +6,7 @@ import app from "../firebase/firebase.config";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const auth = getAuth(app);
 
@@ -24,6 +25,7 @@ const Login = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        setError("Invalid user email or password! Please type correct one");
       });
   };
   return (
