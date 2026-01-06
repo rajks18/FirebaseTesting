@@ -9,7 +9,7 @@ const Login = () => {
   return (
     <div className="flex justify-center min-h-screen items-center bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-md rounded-lg">
-        <h2 className="text-2xl font-bold text-center text-gray-800">Please Register</h2>
+        <h2 className="text-2xl font-bold text-center text-gray-800">Please Login</h2>
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
             <label className="block mb-2 text-sm font-medium text-gray-700">Email:</label>
@@ -36,13 +36,13 @@ const Login = () => {
             />
           </div>
           <button type="submit" className="w-full bg-blue-600 text-white rounded-md hover:bg-blue-700 py-2">
-            Sign Up
+            Login
           </button>
         </form>
         <p className="text-sm text-center text-gray-600">
-          Already have an account? Please{" "}
-          <Link to="/login" className="text-blue-600 hover:underline">
-            Log In
+          Don't have an account? Please{" "}
+          <Link to="/register" className="text-blue-600 hover:underline">
+            Sign Up
           </Link>
         </p>
       </div>

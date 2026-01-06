@@ -6,7 +6,7 @@ import app from "../firebase/firebase.config";
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+
   const navigate = useNavigate();
 
   const auth = getAuth(app);
@@ -69,7 +69,7 @@ const Register = () => {
         <p className="text-sm text-center text-gray-600">
           Already have an account? Please{" "}
           <Link to="/login" className="text-blue-600 hover:underline">
-            Log In
+            Login
           </Link>
         </p>
       </div>
