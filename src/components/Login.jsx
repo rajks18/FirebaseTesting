@@ -1,11 +1,26 @@
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { Link } from "react-router";
+import app from "../firebase/firebase.config";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const auth = getAuth(app);
+  const handleLogin = (e) => {
+    e.preventDefault();
 
-  const handleLogin = (e) => {};
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+  };
   return (
     <div className="flex justify-center min-h-screen items-center bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-md rounded-lg">
